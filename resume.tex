@@ -1,0 +1,130 @@
+\documentclass[10pt, letterpaper]{article}
+\usepackage[protrusion=true,expansion=true]{microtype}
+\usepackage[letterpaper,margin=0.6in]{geometry}
+\addtolength{\topmargin}{0.2in}
+\usepackage{mdwlist}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage{fancyhdr}
+\usepackage{enumitem}
+\usepackage{soul}
+\usepackage{color}
+\pagestyle{fancyplain}
+\usepackage{url}
+\setlength{\tabcolsep}{0em}
+
+\setlist{labelindent=2.5em, labelsep=1em, leftmargin=*, nolistsep}
+
+%http://tex.stackexchange.com/questions/36894/underline-omitting-the-descenders
+\makeatletter
+\newcommand*{\whiten}[1]{\llap{\textcolor{white}{{\the\SOUL@token}}\hspace{#1pt}}}
+\DeclareRobustCommand*\myul{%
+    \def\SOUL@everyspace{\underline{\space}\kern\z@}
+    \def\SOUL@everytoken{%
+     \setbox0=\hbox{\the\SOUL@token}%
+     \ifdim\dp0>\z@
+        \raisebox{\dp0}{\underline{\phantom{\the\SOUL@token}}}%
+        \whiten{1}\whiten{0}%
+        \whiten{-1}\whiten{-2}%
+        \llap{\the\SOUL@token}%
+     \else
+        \underline{\the\SOUL@token}%
+     \fi}
+\SOUL@}
+\makeatother
+
+\begin{document}
+\fancyhf{}
+\lhead{hello@bryanmarty.com \\ www.bryanmarty.com}
+\chead{\textsc{\textbf{\Huge Bryan Marty}}}
+\rhead{4917 Pine Ridge Dr. \\ Wooster, OH 44691 \\ (330) 234-2809}
+
+\newcommand{\resumesection}[1]{\noindent \textsc{\textbf{#1}}}
+\newcommand{\employer}[1]{\textbf{#1}}
+\newcommand{\position}[1]{\textit{\textbf{#1}}}
+\newcommand{\projectname}[1]{ \myul{#1}}
+\newcommand{\teamname}[1]{ \myul{#1}}
+\newcommand{\college}[1]{\textbf{#1}}
+\newcommand{\degree}[1]{\textbf{#1}}
+
+\resumesection{Education}
+
+\college{Case Western Reserve University}
+
+\degree{B.S.E. Computer Engineering, GPA: 3.79} \hfill December 2013
+\begin{itemize}
+\item Dean's High Honors, Dean's Honor List
+\item Eta Kappa Nu Honor Society
+\end{itemize}
+
+\bigskip
+\resumesection{Experience}
+
+\employer{Yelp}, \position{Software Engineering Intern} \hfill San Francisco, CA \hfill January 2013 - August 2013
+
+\hangindent=15pt
+\teamname{Revenue Team}: Developing infrastructure related to payment accounts, billing, collections, discounts,  and promotions.
+
+\begin{itemize}
+\item Increased sales by developing promotions that business owners can redeem
+\item Bug fixes, scaling, internal applications and services
+\item Developed and maintained batch reports used by the Financial Team
+\end{itemize}
+
+\bigskip
+\employer{Codonics}, \position{Software Engineer Co-op} \hfill Middleburg Heights, OH \hfill May 2011 - August 2012
+
+\hangindent=15pt
+\projectname{Safe Label System}: Key developer in the software design of the Safe Label System, a product designed to reduce medical mistakes in the operating room.
+
+\begin{itemize}
+\item Developed wired/wireless network management software using Java and BASH, leading to the first major sale of the Safe Label System\item Designed and developed major software features to assist in the administration of prepared drugs.\item Collaborated with Massachusetts General Hospital IT staff to integrate the Safe Label System with their secure EAP-TLS wireless network\item Established, configured, and executed EAP-TLS and PEAPv0-MSCHAPv2 authentication servers on Ubuntu and Windows Server for testing and development with automated EAP-TLS certificate generation\item Developed a restricted shell environment for Linux using C{}\verb!++!, which restricted users to predefined commands and scripts
+\end{itemize}
+
+\bigskip
+\employer{U.S. Department of Energy: Apps For Energy Challenge}  \hfill Washington D.C. \hfill May 22, 2012
+
+\hangindent=15pt
+\projectname{Budget It Yourself}: Developed an Android application, as part of a team, that allows users to monitor and budget their home energy usage using Green Button data provided by utility companies.
+
+\begin{itemize}
+\item Awarded 2nd in Best Student Application, Cash Prize, Energy Datapalooza Exhibitor\item Designed a website in Python and jQuery that allows users to upload their Green Button data to an Android smartphone: http://www.budgetityourself.com\item Developed the backend, database, and asynchronous tasks for the mobile application\item Published as a free application on Google Play
+\end{itemize}
+\bigskip
+\employer{CWRU Information Technology Services}, \position{Software Engineer}  \hfill CWRU \hfill October 2009 - April 2011
+
+\hangindent=15pt
+ \underline{Metrics}: Designed a web portal used by departments to record metrics data which could be displayed on a graph. Different items could be plotted, viewed in tables, and be made private or public.
+
+\begin{itemize}
+\item Setup and maintained a Linux web server to increase the efficiency of testing code before deployment\item Utilized HTML, PHP, MySQL, jQuery, Flash, LDAP,  Central Authentication Service\item Moodle: Maintained a custom Moodle (web-based learning management system) installation, used as an alternative to Blackboard %\item Provided faculty and students with an interactive teaching and social learning experience\item Programmed custom integration plug-ins for campus lecture recordings and other services\item Created a course/user management wizard to allow for batch enrollment, which increased efficiency%\item Designed a custom theme using CSS to improve the visual quality of the site%\item Improved communication skills through weekly meetings and presentations \end{itemize}
+
+\bigskip\employer{Advanced Game Design}, \position{Programming Team Leader}  \hfill CWRU \hfill August 2010 - December 2010
+
+\hangindent=15pt
+\projectname{Kalotai}: Developed a GPS/Location based Android game with a team of programmers and artists.
+
+\begin{itemize}\item Led and managed a 9-person team to develop an Android based GPS game%\item Moderated and organized weekly meetings for members to track progress and eliminate issues\item Developed a custom game engine using bit blitting and a Service (application component)\item Analyzed performance metrics and optimized code to increase performance by 40\%%\item Gained more experience with Java, Android SDK, Eclipse, SVN, Photoshop, Assembla\item Presented game to EA for evaluation and feedback
+\end{itemize}
+
+\bigskip
+
+\resumesection{Skills}
+
+Experienced: Python, MySQL, Java
+
+Used in the past: HTML, PHP,  Groovy, Grails, C\verb!++!
+
+Interests and Curiosity: Django, Cocoa
+
+\bigskip
+
+\resumesection{Activities}
+
+Phi Kappa Tau, Alpha Delta Chapter (Webmaster) \hfill 2010 - 2012
+
+Eta Kappa Nu (President) \hfill 2011 - 2012
+
+Spectrum (President, Treasurer) \hfill 2008 - 2011
+
+\end{document}
